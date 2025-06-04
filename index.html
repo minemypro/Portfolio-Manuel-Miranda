@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio - Designer Web e Gráfico</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #6c63ff;
+        --secondary-color: #4d44db;
+        --dark-color: #2f2e41;
+        --light-color: #f8f9fa;
+        --accent-color: #ff6584;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        color: var(--dark-color);
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+      }
+
+      .navbar {
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 15px 0;
+        transition: all 0.3s;
+      }
+
+      .navbar.scrolled {
+        padding: 10px 0;
+        background-color: rgba(255, 255, 255, 0.95);
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        color: var(--primary-color) !important;
+        font-size: 1.8rem;
+      }
+
+      .nav-link {
+        color: var(--dark-color) !important;
+        font-weight: 500;
+        margin: 0 10px;
+        position: relative;
+      }
+
+      .nav-link:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: var(--primary-color);
+        bottom: 0;
+        left: 0;
+        transition: width 0.3s;
+      }
+
+      .nav-link:hover:after {
+        width: 100%;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        padding: 120px 0 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: var(--dark-color);
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        color: #555;
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-weight: 500;
+        transition: all 0.3s;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2);
+      }
+
+      .btn-outline-primary {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-weight: 500;
+        transition: all 0.3s;
+      }
+
+      .btn-outline-primary:hover {
+        background-color: var(--primary-color);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2);
+      }
+
+      .section-title {
+        position: relative;
+        margin-bottom: 60px;
+        text-align: center;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 4px;
+        background: var(--primary-color);
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+
+      .service-card {
+        background: white;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .service-icon {
+        width: 80px;
+        height: 80px;
+        background: rgba(108, 99, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        color: var(--primary-color);
+        font-size: 30px;
+      }
+
+      .portfolio-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .portfolio-img {
+        transition: all 0.5s;
+        width: 100%;
+        height: auto;
+      }
+
+      .portfolio-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(108, 99, 255, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: all 0.3s;
+      }
+
+      .portfolio-item:hover .portfolio-overlay {
+        opacity: 1;
+      }
+
+      .portfolio-item:hover .portfolio-img {
+        transform: scale(1.1);
+      }
+
+      .portfolio-info {
+        text-align: center;
+        color: white;
+        padding: 20px;
+      }
+
+      .testimonial-card {
+        background: white;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        margin: 15px;
+        position: relative;
+      }
+
+      .testimonial-card:before {
+        content: '"';
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 60px;
+        color: rgba(108, 99, 255, 0.1);
+        font-family: serif;
+        line-height: 1;
+      }
+
+      .client-img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--primary-color);
+        margin-right: 15px;
+      }
+
+      .contact-info {
+        background: white;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        height: 100%;
+      }
+
+      .contact-icon {
+        width: 50px;
+        height: 50px;
+        background: rgba(108, 99, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-color);
+        font-size: 20px;
+        margin-right: 15px;
+      }
+
+      footer {
+        background: var(--dark-color);
+        color: white;
+        padding: 60px 0 20px;
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--primary-color); /* Cor sólida em vez de transparente */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        margin-right: 10px;
+        transition: all 0.3s;
+    }
+
+    .social-icon:hover {
+        background: var(--secondary-color); /* Muda para cor secundária no hover */
+        transform: translateY(-5px);
+    }
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--primary-color);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        z-index: 99;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+      }
+
+      .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Menu de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          >Design<span style="font-weight: 300">Creativo</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Serviços</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Portfólio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials">Depoimentos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 hero-content">
+            <h1>Criando experiências visuais memoráveis</h1>
+            <p>
+              Sou um designer web e gráfico apaixonado por criar designs que não
+              apenas impressionam visualmente, mas também contam histórias e
+              impulsionam resultados.
+            </p>
+            <a href="#portfolio" class="btn btn-primary me-2">Ver Portfólio</a>
+            <a href="#contact" class="btn btn-outline-primary">Contato</a>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="img/completa3.png"
+              alt="Designer"
+              class="img-fluid rounded-3 shadow "
+            />
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section class="py-5 bg-light" id="services">
+      <div class="container py-5">
+        <h2 class="section-title">Meus Serviços</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <h3>Web Design</h3>
+              <p>
+                Criação de websites responsivos, modernos e otimizados para
+                conversão, com foco na experiência do usuário.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-paint-brush"></i>
+              </div>
+              <h3>Design Gráfico</h3>
+              <p>
+                Desenvolvimento de identidade visual, logotipos, materiais
+                impressos e peças gráficas para sua marca.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h3>UI/UX Design</h3>
+              <p>
+                Design de interfaces intuitivas e agradáveis, com prototipagem e
+                testes para garantir a melhor usabilidade.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <h3>E-commerce</h3>
+              <p>
+                Criação de lojas virtuais atraentes e funcionais, otimizadas
+                para vendas e experiência de compra.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-bullhorn"></i>
+              </div>
+              <h3>Marketing Digital</h3>
+              <p>
+                Design de materiais para redes sociais, banners, anúncios e
+                campanhas de marketing digital.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-pencil-ruler"></i>
+              </div>
+              <h3>Branding</h3>
+              <p>
+                Desenvolvimento de identidade visual completa, incluindo manual
+                da marca e aplicações.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="py-5" id="portfolio">
+      <div class="container py-5">
+        <h2 class="section-title">Meu Portfólio</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="portfolio-item">
+              <img
+                src="img/port 03.png"
+                alt="Projeto 1"
+                class="portfolio-img"
+              />
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <h3>Website Corporativo</h3>
+                  <p>Design moderno e responsivo para empresa de tecnologia</p>
+                  <a href="#" class="btn btn-outline-light">Ver Detalhes</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="portfolio-item">
+              <img
+                src="img/port 01.png"
+                alt="Projeto 2"
+                class="portfolio-img"
+              />
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <h3>Identidade Visual</h3>
+                  <p>Criação de logo e manual da marca para Colegio</p>
+                  <a href="#" class="btn btn-outline-light">Ver Detalhes</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="portfolio-item">
+              <img
+                src="img/port 04.png"
+                alt="Projeto 3"
+                class="portfolio-img"
+              />
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <h3>Aplicativo Mobile</h3>
+                  <p>Design de App de encomenda</p>
+                  <a href="#" class="btn btn-outline-light">Ver Detalhes</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="portfolio-item">
+              <img
+                src="img/port 05 6.png"
+                alt="Projeto 4"
+                class="portfolio-img"
+              />
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <h3>Material Impresso</h3>
+                  <p>Materiais publicitário completo</p>
+                  <a href="#" class="btn btn-outline-light">Ver Detalhes</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="portfolio-item">
+              <img
+                src="img/port 02.png"
+                alt="Projeto 5"
+                class="portfolio-img"
+              />
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <h3>Redes Sociais</h3>
+                  <p>Posts e campanha para Instagram</p>
+                  <a href="#" class="btn btn-outline-light">Ver Detalhes</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="portfolio-item">
+              <img
+                src="img/port 05.png"
+                alt="Projeto 6"
+                class="portfolio-img"
+              />
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <h3>Material Impresso</h3>
+                  <p>Rollups e folders para evento corporativo</p>
+                  <a href="#" class="btn btn-outline-light">Ver Detalhes</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="#" class="btn btn-primary">Ver Mais Projetos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- acerca Section -->
+    <section class="py-5 bg-light" id="about">
+      <div class="container py-5">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <img
+              src="img/mn alterado 01.png"
+              alt="Sobre Mim"
+              class="img-fluid rounded-3 shadow w-75"
+            />
+          </div>
+          <div class="col-lg-6">
+            <h2 class="section-title text-start">Sobre Mim</h2>
+            <p class="lead">
+              Olá, eu sou [Manuel Miranda], designer web e gráfico com mais de 5 anos
+              de experiência criando soluções visuais impactantes.
+            </p>
+            <p>
+              Minha jornada no design começou quando eu era criança, sempre
+              fascinado por cores, formas e como elas podem comunicar ideias.
+              Formando em Engenharia Informática [Deolinda Rodrigues IDERO], trabalhei com
+              Instituições renomadas antes de seguir carreira independente.
+            </p>
+            <p>
+              Acredito que um bom design vai além da estética - ele deve
+              resolver problemas, contar histórias e criar conexões emocionais.
+              Meu processo combina pesquisa, criatividade e atenção aos detalhes
+              para entregar resultados que superam expectativas.
+            </p>
+            <div class="row mt-4">
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="fas fa-check text-primary me-2"></i> Design
+                    Responsivo
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-primary me-2"></i> UI/UX Moderno
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-primary me-2"></i> Identidade
+                    Visual
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="fas fa-check text-primary me-2"></i> Adobe
+                    Creative Suite
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-primary me-2"></i> Figma/Sketch
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-primary me-2"></i> HTML/CSS
+                    Básico
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <a target="_blank" href="https://drive.google.com/file/d/1pePgpzRAsRUHO_OpI4lU6RTY90QhuYz1/view?usp=drive_link" class="btn btn-primary mt-3">Download CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="py-5" id="testimonials">
+      <div class="container py-5">
+        <h2 class="section-title">Depoimentos</h2>
+        <div class="row">
+          <div class="col-12">
+            <div
+              id="testimonialCarousel"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="testimonial-card">
+                    <p class="mb-4">
+                      "Trabalhar com [Manuel Miranda] foi uma experiência incrível.
+                      Ele capturou perfeitamente a essência da nossa marca e
+                      transformou em um design moderno e funcional que superou
+                      nossas expectativas. Nosso site teve um aumento de 40% no
+                      tempo de permanência após o redesign."
+                    </p>
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="img/transferir (2).jpeg"
+                        alt="Cliente 1"
+                        class="client-img"
+                      />
+                      <div>
+                        <h5 class="mb-1">Ana Silva</h5>
+                        <p class="mb-0 text-muted">CEO, TechSolutions</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="testimonial-card">
+                    <p class="mb-4">
+                      "O [Manuel Miranda] desenvolveu nossa identidade visual completa
+                      e o resultado foi impressionante. Ele tem uma habilidade
+                      única de entender a personalidade da marca e traduzir em
+                      elementos visuais coerentes. Recomendo seu trabalho sem
+                      hesitação!"
+                    </p>
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="img/transferir (2).jpeg"
+                        alt="Cliente 2"
+                        class="client-img"
+                      />
+                      <div>
+                        <h5 class="mb-1">Carlos Mendes</h5>
+                        <p class="mb-0 text-muted">Fundador, GreenLife</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="testimonial-card">
+                    <p class="mb-4">
+                      "Como startup, precisávamos de um design que comunicasse
+                      profissionalismo e inovação. [Manuel Miranda] não só entregou
+                      isso como também nos guiou no processo, entendendo nosso
+                      público e objetivos. O design do nosso app foi crucial
+                      para o sucesso do nosso pitch com investidores."
+                    </p>
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="img/transferir (2).jpeg"
+                        alt="Cliente 3"
+                        class="client-img"
+                      />
+                      <div>
+                        <h5 class="mb-1">Juliana Oliveira</h5>
+                        <p class="mb-0 text-muted">COO, FinTechApp</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#testimonialCarousel"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#testimonialCarousel"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Próximo</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section class="py-5 bg-light" id="contact">
+      <div class="container py-5">
+        <h2 class="section-title">Vamos Conversar</h2>
+        <div class="row">
+          <div class="col-lg-5 mb-5 mb-lg-0">
+            <div class="contact-info">
+              <h3 class="mb-4">Informações de Contato</h3>
+              <div class="d-flex mb-4">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Localização</h5>
+                  <p class="mb-0">Luanda, Angola</p>
+                </div>
+              </div>
+              <div class="d-flex mb-4">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Email</h5>
+                  <p class="mb-0">manupalps60@gmail.com</p>
+                </div>
+              </div>
+              <div class="d-flex mb-4">
+                <div class="contact-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Telefone</h5>
+                  <p class="mb-0">(+244)934-072-990</p>
+                </div>
+              </div>
+              <div class="mt-5">
+                <h5 class="mb-3">Redes Sociais</h5>
+                <div class="d-flex">
+                    <a href="https://facebook.com/seu-perfil" class="social-icon" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://instagram.com/seu-perfil" class="social-icon" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/seu-numero" class="social-icon" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <form id="contactForm" class="bg-white p-4 rounded-3 shadow">
+              <div class="mb-3">
+                <label for="name" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="name" required />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required />
+              </div>
+              <div class="mb-3">
+                <label for="subject" class="form-label">Assunto</label>
+                <input type="text" class="form-control" id="subject" required />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Mensagem</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Enviar Mensagem
+              </button>
+            </form>
+            <div id="formSuccess" class="alert alert-success mt-3 d-none">
+              Mensagem enviada com sucesso! Entrarei em contato em breve.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <a class="navbar-brand text-white" href="#"
+              >Design<span style="font-weight: 300">Creativo</span></a
+            >
+            <p class="mt-3">
+              Criando designs que inspiram, conectam e transformam.
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="mb-4">Links Rápidos</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#home" class="text-white text-decoration-none"
+                  >Início</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#services" class="text-white text-decoration-none"
+                  >Serviços</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#portfolio" class="text-white text-decoration-none"
+                  >Portfólio</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#about" class="text-white text-decoration-none"
+                  >Sobre</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#contact" class="text-white text-decoration-none"
+                  >Contato</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h5 class="mb-4">Horário</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">Segunda - Sexta: 9h - 18h</li>
+              <li class="mb-2">Sábado: 10h - 14h</li>
+              <li class="mb-2">Domingo: Fechado</li>
+            </ul>
+          </div>
+        </div>
+        <hr
+          class="mt-4 mb-4"
+          style="background-color: rgba(255, 255, 255, 0.1)"
+        />
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-0">
+              &copy; 2023 DesignCreativo. Todos os direitos reservados.
+            </p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <p class="mb-0">
+              Desenvolvido com <i class="fas fa-heart text-danger"></i> por [Manuel Miranda]
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- botão voltar -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+      // efeito scroll do vavbar
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Rolagem suave para links âncora
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 70,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Botão de voltar ao topo
+
+      const backToTopButton = document.querySelector(".back-to-top");
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 300) {
+          backToTopButton.classList.add("active");
+        } else {
+          backToTopButton.classList.remove("active");
+        }
+      });
+
+      backToTopButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Envio do formulário de contato
+
+      const contactForm = document.getElementById("contactForm");
+      const formSuccess = document.getElementById("formSuccess");
+
+      if (contactForm) {
+        contactForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Aqui você normalmente enviaria os dados do formulário para um servidor
+          // Para demonstração, vamos apenas exibir a mensagem de sucesso
+
+          // Redefinir formulário
+
+          contactForm.reset();
+
+          // Exibir mensagem de sucesso
+
+          formSuccess.classList.remove("d-none");
+
+          // Ocultar mensagem de sucesso após 5 segundos
+
+          setTimeout(function () {
+            formSuccess.classList.add("d-none");
+          }, 5000);
+        });
+      }
+
+      // Ativar link de navegação ao rolar a página
+
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      window.addEventListener("scroll", function () {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+
+          if (pageYOffset >= sectionTop - 100) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
