@@ -288,19 +288,23 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        background: var(--primary-color); /* Cor sólida em vez de transparente */
+        background: var(
+          --primary-color
+        ); /* Cor sólida em vez de transparente */
         display: flex;
         align-items: center;
         justify-content: center;
         color: white;
         margin-right: 10px;
         transition: all 0.3s;
-    }
+      }
 
-    .social-icon:hover {
-        background: var(--secondary-color); /* Muda para cor secundária no hover */
+      .social-icon:hover {
+        background: var(
+          --secondary-color
+        ); /* Muda para cor secundária no hover */
         transform: translateY(-5px);
-    }
+      }
       .back-to-top {
         position: fixed;
         bottom: 30px;
@@ -397,10 +401,9 @@
             <img
               src="img/completa3.png"
               alt="Designer"
-              class="img-fluid rounded-3 shadow "
+              class="img-fluid rounded-3 shadow"
             />
           </div>
-          
         </div>
       </div>
     </section>
@@ -487,12 +490,23 @@
     </section>
 
     <!-- Portfolio Section -->
+    <!-- Portfolio Section -->
     <section class="py-5" id="portfolio">
       <div class="container py-5">
         <h2 class="section-title">Meu Portfólio</h2>
         <div class="row">
+          <!-- Item 1 -->
           <div class="col-md-4">
-            <div class="portfolio-item">
+            <div
+              class="portfolio-item"
+              data-bs-toggle="modal"
+              data-bs-target="#projectModal"
+              data-title="Website Corporativo"
+              data-description="Desenvolvi este website para uma empresa de tecnologia em Luanda, com foco em apresentar seus serviços de forma clara e moderna. O projeto incluiu pesquisa de usuário, criação de wireframes, design de interface e implementação front-end. O cliente reportou um aumento de 30% nas solicitações de contato após o lançamento."
+              data-techs="Adobe XD,HTML5,CSS3,JavaScript,Bootstrap"
+              data-link="#"
+              data-image="img/port 03.png"
+            >
               <img
                 src="img/port 03.png"
                 alt="Projeto 1"
@@ -502,13 +516,24 @@
                 <div class="portfolio-info">
                   <h3>Website Corporativo</h3>
                   <p>Design moderno e responsivo para empresa de tecnologia</p>
-                  <a href="#" class="btn btn-outline-light">Ver Detalhes</a>
+                  <button class="btn btn-outline-light">Ver Detalhes</button>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Item 2 -->
           <div class="col-md-4">
-            <div class="portfolio-item">
+            <div
+              class="portfolio-item"
+              data-bs-toggle="modal"
+              data-bs-target="#projectModal"
+              data-title="Identidade Visual"
+              data-description="Criação completa da identidade visual para um colégio em Luanda, incluindo logotipo, cartões de visita, papelaria e material institucional. O projeto teve como objetivo transmitir valores educacionais e modernidade."
+              data-techs="Adobe Illustrator,Photoshop"
+              data-link="#"
+              data-image="img/port 01.png"
+            >
               <img
                 src="img/port 01.png"
                 alt="Projeto 2"
@@ -518,78 +543,115 @@
                 <div class="portfolio-info">
                   <h3>Identidade Visual</h3>
                   <p>Criação de logo e manual da marca para Colegio</p>
-                  <a href="#" class="btn btn-outline-light">Ver Detalhes</a>
+                  <button class="btn btn-outline-light">Ver Detalhes</button>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Item 3 -->
           <div class="col-md-4">
-            <div class="portfolio-item">
+            <div
+              class="portfolio-item"
+              data-bs-toggle="modal"
+              data-bs-target="#projectModal"
+              data-title="Aplicativo de Encomendas"
+              data-description="Design completo de um aplicativo mobile para encomendas de produtos locais. Desenvolvi a interface do usuário com foco na usabilidade, criando um fluxo intuitivo desde a seleção de produtos até o checkout. O design incluiu: protótipos navegáveis, sistema de ícones personalizados, paleta de cores vibrante e componentes reutilizáveis. O resultado foi um aumento de 25% na conversão em comparação com o app anterior."
+              data-techs="Figma, Adobe XD, Illustrator, After Effects (para microinterações)"
+              data-link="#"
+              data-image="img/port 04.png"
+            >
               <img
                 src="img/port 04.png"
-                alt="Projeto 3"
+                alt="Aplicativo Mobile"
                 class="portfolio-img"
               />
               <div class="portfolio-overlay">
                 <div class="portfolio-info">
                   <h3>Aplicativo Mobile</h3>
                   <p>Design de App de encomenda</p>
-                  <a href="#" class="btn btn-outline-light">Ver Detalhes</a>
+                  <button class="btn btn-outline-light">Ver Detalhes</button>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Item 4 -->
           <div class="col-md-4">
-            <div class="portfolio-item">
+            <div
+              class="portfolio-item"
+              data-bs-toggle="modal"
+              data-bs-target="#projectModal"
+              data-title="Campanha Publicitária Impressa"
+              data-description="Desenvolvimento de material impresso completo para lançamento de produto, incluindo: folders, banners, cartazes e material promocional. Criei um conceito visual unificado que reforçava os valores da marca, com tipografia impactante e hierarquia clara de informações. Todo o material foi preparado para impressão com sangria e cores no padrão CMYK, garantindo qualidade final."
+              data-techs="Adobe InDesign, Photoshop, Illustrator"
+              data-link="#"
+              data-image="img/port 05 6.png"
+            >
               <img
                 src="img/port 05 6.png"
-                alt="Projeto 4"
+                alt="Material Impresso"
                 class="portfolio-img"
               />
               <div class="portfolio-overlay">
                 <div class="portfolio-info">
                   <h3>Material Impresso</h3>
                   <p>Materiais publicitário completo</p>
-                  <a href="#" class="btn btn-outline-light">Ver Detalhes</a>
+                  <button class="btn btn-outline-light">Ver Detalhes</button>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Item 5-->
           <div class="col-md-4">
-            <div class="portfolio-item">
+            <div
+              class="portfolio-item"
+              data-bs-toggle="modal"
+              data-bs-target="#projectModal"
+              data-title="Campanha para Instagram"
+              data-description="Gestão completa de conteúdo visual para Instagram de uma marca de moda. Desenvolvi um grid coeso com posts, stories e reels, mantendo a identidade visual da marca enquanto implementava tendências atuais. Criei templates reutilizáveis para agilizar a produção de conteúdo. A campanha resultou em um crescimento de 40% no engajamento e 15% no tráfego para o site."
+              data-techs="Photoshop, Illustrator, Premiere Pro, After Effects"
+              data-link="#"
+              data-image="img/port 02.png"
+            >
               <img
                 src="img/port 02.png"
-                alt="Projeto 5"
+                alt="Redes Sociais"
                 class="portfolio-img"
               />
               <div class="portfolio-overlay">
                 <div class="portfolio-info">
                   <h3>Redes Sociais</h3>
                   <p>Posts e campanha para Instagram</p>
-                  <a href="#" class="btn btn-outline-light">Ver Detalhes</a>
+                  <button class="btn btn-outline-light">Ver Detalhes</button>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Item 6-->
           <div class="col-md-4">
-            <div class="portfolio-item">
-              <img
-                src="img/port 05.png"
-                alt="Projeto 6"
-                class="portfolio-img"
-              />
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h3>Material Impresso</h3>
-                  <p>Rollups e folders para evento corporativo</p>
-                  <a href="#" class="btn btn-outline-light">Ver Detalhes</a>
+            <div class="portfolio-item" 
+                 data-bs-toggle="modal" 
+                 data-bs-target="#projectModal"
+                 data-title="Material para Evento Corporativo" 
+                 data-description="Criação de identidade visual temporária e material gráfico para um evento corporativo anual. Desenvolvi rollups, placas de sinalização, credenciais e materiais de apoio com um design que complementava a marca principal mas tinha elementos exclusivos do evento. O projeto incluiu coordenação com a gráfica para garantir acabamento premium e entrega dentro do prazo apertado."
+                 data-techs="Illustrator, Photoshop, InDesign"
+                 data-link="#"
+                 data-image="img/port 05.png">
+                <img src="img/port 05.png" alt="Material para Evento" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                        <h3>Material Impresso</h3>
+                        <p>Rollups e folders para evento corporativo</p>
+                        <button class="btn btn-outline-light">Ver Detalhes</button>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-        <div class="text-center mt-4">
-          <a target="_blank" href="https://www.behance.net/manuelmiranda8" class="btn btn-primary">Ver Mais Projetos</a>
+          <!-- Repita para os outros itens com seus respectivos dados -->
+          <!-- ... -->
         </div>
       </div>
     </section>
@@ -608,14 +670,15 @@
           <div class="col-lg-6">
             <h2 class="section-title text-start">Sobre Mim</h2>
             <p class="lead">
-              Olá, eu sou [Manuel Miranda], designer web e gráfico com mais de 5 anos
-              de experiência criando soluções visuais impactantes.
+              Olá, eu sou [Manuel Miranda], designer web e gráfico com mais de 5
+              anos de experiência criando soluções visuais impactantes.
             </p>
             <p>
               Minha jornada no design começou quando eu era criança, sempre
               fascinado por cores, formas e como elas podem comunicar ideias.
-              Formando em Engenharia Informática [Deolinda Rodrigues IDERO], trabalhei com
-              Instituições renomadas antes de seguir carreira independente.
+              Formando em Engenharia Informática [Deolinda Rodrigues IDERO],
+              trabalhei com Instituições renomadas antes de seguir carreira
+              independente.
             </p>
             <p>
               Acredito que um bom design vai além da estética - ele deve
@@ -655,7 +718,12 @@
                 </ul>
               </div>
             </div>
-            <a target="_blank" href="https://drive.google.com/file/d/10Pzv8bFHyn2Q8L_ggC9xRxD_RRoOv39p/view?usp=drive_link" class="btn btn-primary mt-3">Download CV</a>
+            <a
+              target="_blank"
+              href="https://drive.google.com/file/d/10Pzv8bFHyn2Q8L_ggC9xRxD_RRoOv39p/view?usp=drive_link"
+              class="btn btn-primary mt-3"
+              >Download CV</a
+            >
           </div>
         </div>
       </div>
@@ -676,15 +744,15 @@
                 <div class="carousel-item active">
                   <div class="testimonial-card">
                     <p class="mb-4">
-                      "Trabalhar com [Manuel Miranda] foi uma experiência incrível.
-                      Ele capturou perfeitamente a essência da nossa marca e
-                      transformou em um design moderno e funcional que superou
-                      nossas expectativas. Nosso site teve um aumento de 40% no
-                      tempo de permanência após o redesign."
+                      "Trabalhar com [Manuel Miranda] foi uma experiência
+                      incrível. Ele capturou perfeitamente a essência da nossa
+                      marca e transformou em um design moderno e funcional que
+                      superou nossas expectativas. Nosso site teve um aumento de
+                      40% no tempo de permanência após o redesign."
                     </p>
                     <div class="d-flex align-items-center">
                       <img
-                        src="img/transferir (2).jpeg"
+                        src="img/transferir (2).jpeg.png"
                         alt="Cliente 1"
                         class="client-img"
                       />
@@ -698,11 +766,11 @@
                 <div class="carousel-item">
                   <div class="testimonial-card">
                     <p class="mb-4">
-                      "O [Manuel Miranda] desenvolveu nossa identidade visual completa
-                      e o resultado foi impressionante. Ele tem uma habilidade
-                      única de entender a personalidade da marca e traduzir em
-                      elementos visuais coerentes. Recomendo seu trabalho sem
-                      hesitação!"
+                      "O [Manuel Miranda] desenvolveu nossa identidade visual
+                      completa e o resultado foi impressionante. Ele tem uma
+                      habilidade única de entender a personalidade da marca e
+                      traduzir em elementos visuais coerentes. Recomendo seu
+                      trabalho sem hesitação!"
                     </p>
                     <div class="d-flex align-items-center">
                       <img
@@ -721,10 +789,11 @@
                   <div class="testimonial-card">
                     <p class="mb-4">
                       "Como startup, precisávamos de um design que comunicasse
-                      profissionalismo e inovação. [Manuel Miranda] não só entregou
-                      isso como também nos guiou no processo, entendendo nosso
-                      público e objetivos. O design do nosso app foi crucial
-                      para o sucesso do nosso pitch com investidores."
+                      profissionalismo e inovação. [Manuel Miranda] não só
+                      entregou isso como também nos guiou no processo,
+                      entendendo nosso público e objetivos. O design do nosso
+                      app foi crucial para o sucesso do nosso pitch com
+                      investidores."
                     </p>
                     <div class="d-flex align-items-center">
                       <img
@@ -808,17 +877,29 @@
               <div class="mt-5">
                 <h5 class="mb-3">Redes Sociais</h5>
                 <div class="d-flex">
-                    <a href="https://facebook.com/seu-perfil" class="social-icon" target="_blank">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://instagram.com/seu-perfil" class="social-icon" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://wa.me/seu-numero" class="social-icon" target="_blank">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
+                  <a
+                    href="https://facebook.com/seu-perfil"
+                    class="social-icon"
+                    target="_blank"
+                  >
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a
+                    href="https://instagram.com/seu-perfil"
+                    class="social-icon"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a
+                    href="https://wa.me/seu-numero"
+                    class="social-icon"
+                    target="_blank"
+                  >
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
                 </div>
-            </div>
+              </div>
             </div>
           </div>
           <div class="col-lg-7">
@@ -919,7 +1000,8 @@
           </div>
           <div class="col-md-6 text-center text-md-end">
             <p class="mb-0">
-              Desenvolvido com <i class="fas fa-heart text-danger"></i> por [Manuel Miranda]
+              Desenvolvido com <i class="fas fa-heart text-danger"></i> por
+              [Manuel Miranda]
             </p>
           </div>
         </div>
@@ -928,6 +1010,67 @@
 
     <!-- botão voltar -->
     <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Adicione este código antes do fechamento do body (antes dos scripts) -->
+    <!-- Modal para detalhes do projeto -->
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="projectModalTitle">
+              Título do Projeto
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img
+                  id="projectModalImage"
+                  src=""
+                  alt="Projeto"
+                  class="img-fluid rounded"
+                />
+              </div>
+              <div class="col-md-6">
+                <h4>Sobre este projeto</h4>
+                <p id="projectModalDescription">
+                  Descrição detalhada do projeto...
+                </p>
+                <div class="mt-4">
+                  <h5>Tecnologias utilizadas</h5>
+                  <ul id="projectModalTechs" class="list-unstyled">
+                    <!-- Tecnologias serão adicionadas via JavaScript -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Fechar
+            </button>
+            <a
+              id="projectModalLink"
+              href="#"
+              target="_blank"
+              class="btn btn-primary"
+              >Ver Projeto</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -1031,6 +1174,50 @@
           if (link.getAttribute("href") === `#${current}`) {
             link.classList.add("active");
           }
+        });
+      });
+
+      // Configurar modal do portfólio com dados específicos
+      document.addEventListener("DOMContentLoaded", function () {
+        const portfolioItems = document.querySelectorAll(".portfolio-item");
+        const projectModal = new bootstrap.Modal(
+          document.getElementById("projectModal")
+        );
+
+        portfolioItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            // Obter dados do item clicado
+            const title = this.getAttribute("data-title");
+            const description = this.getAttribute("data-description");
+            const techs = this.getAttribute("data-techs").split(",");
+            const link = this.getAttribute("data-link");
+            const image = this.getAttribute("data-image");
+
+            // Preencher o modal com os dados
+            document.getElementById("projectModalTitle").textContent = title;
+            document.getElementById("projectModalDescription").textContent =
+              description;
+            document
+              .getElementById("projectModalLink")
+              .setAttribute("href", link);
+            document
+              .getElementById("projectModalImage")
+              .setAttribute("src", image);
+
+            // Limpar e adicionar tecnologias
+            const techsList = document.getElementById("projectModalTechs");
+            techsList.innerHTML = "";
+
+            techs.forEach((tech) => {
+              const li = document.createElement("li");
+              li.className = "mb-2";
+              li.innerHTML = `<i class="fas fa-check text-primary me-2"></i>${tech.trim()}`;
+              techsList.appendChild(li);
+            });
+
+            // Abrir o modal
+            projectModal.show();
+          });
         });
       });
     </script>
